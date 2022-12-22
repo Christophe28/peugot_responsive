@@ -1,0 +1,31 @@
+//Import
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+//Global design
+$global_font: "Roboto", "sans-serif";
+$primary_color: #fbfbfb;
+$secondary_color: black;
+
+$h2_color: #85838b;
+
+$bg_color: #162133; 
+
+$button_color: #007edb;
+$button_color_2: #133d5f;
+$button_color_3: #3c3947;
+
+$button_text_color: #85c1ee;
+
+$border_color: #efeff1;
+
+$bg_footer: #f5f5f5;
+
+//Responsive
+$viewport_smartphone: "480 à 720";
+$viewport_tablette: "768 à 900";
+$viewport_tablette_portrait: "900 à 1024";
+$viewport_computer: "1024 1200";
+
+$small_up: "only screen and (max-width: 720px)";
+$medium_up: "only screen and (min-width: 721px) and (max-width: 1118px)";
+$large_up: "only screen and (min-width: 1024px)";

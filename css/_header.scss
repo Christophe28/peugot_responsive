@@ -1,0 +1,192 @@
+// @media #{$small_up} {
+//     background-color: red;
+// }
+
+// @media #{$medium_up} {
+//     background-color: blue;
+// }
+
+// @media #{$large_up} {
+//     background-color: green;
+// }
+
+header {
+    background-color: $bg_color;
+    max-width: 99vw;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    margin: auto;
+
+    .container_li_cars_bg {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.container_bg_header {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: url("../pictures/cars/slider-no-text.png") no-repeat;
+    background-size: cover;
+    height: 560px;
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+        width: 100%;
+        // height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 22%;
+        
+        li {
+            color: $primary_color;
+            width: 15%;
+        }
+        .li_partner {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .li_boxer {
+            position: relative;
+        }
+        li a:first-of-type {
+            border: 1px solid blue;
+            background-color: $button_color;
+            position: absolute;
+            bottom: 1.5rem;
+            right: 25px;
+            height: 1.8rem;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+    }
+
+    div {
+        position: absolute;
+        right: 13rem;
+
+        .advantage_message {
+            color: $primary_color;
+            width: 150px;
+            text-transform: uppercase;
+            margin: 0;
+            position: relative;
+            
+            &:before {
+                content: "";
+                display: inline-block;
+                background-color: $primary_color;
+                width: 100px;
+                height: 2px;
+                transform: rotate(90deg);
+                position: absolute;
+                left: -55px;
+                top: 50px;
+            }
+        }
+    }
+}
+
+
+
+section {
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        letter-spacing: 7px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.8rem;
+        
+        &:before, &:after {
+            content: "";
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            background-color: $secondary_color;
+            position: absolute;
+            top: 28%;
+        }
+        
+        &::before {
+            left: 10px;
+        }
+        &::after {
+            right: 20px;
+        }
+        
+        span {
+            font-size: 3rem;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.3rem;
+        margin: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+nav {
+
+    ul {
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        font-weight: bolder;
+        text-transform: uppercase;
+        height: 67px; 
+
+        @media #{$small_up} {
+            flex-wrap: wrap;
+        }
+
+        li {
+            list-style-type: none;
+            font-size: 1rem;
+        }
+    }
+}
+
+li {
+
+    .text_logo {
+        display: inline-block;
+        text-indent: -9999px;
+
+        &:after {
+            content: "";
+            background: url("../pictures/logo/android-chrome-192x192.png") no-repeat;
+            background-size: cover;
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            left: 10px;
+            top: 0.2rem;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primary_color;
+}
+
+.important_price {
+    font-weight: bolder;
+}
