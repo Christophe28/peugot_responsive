@@ -32,6 +32,10 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    @media screen and (max-width: 899px) {
+        background: url("../pictures/cars/Peugeot_boxer_2.jpeg") no-repeat;
+        background-size: cover ;
+    }
     background: url("../pictures/cars/slider-no-text.png") no-repeat;
     background-size: cover;
     height: 560px;
@@ -142,44 +146,138 @@ section {
 }
 
 nav {
+    height: 100px;
 
     ul {
         padding: 0;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
         font-weight: bolder;
         text-transform: uppercase;
-        height: 67px; 
+    }
 
-        @media #{$small_up} {
-            flex-wrap: wrap;
+    @media screen and (max-width: 900px) {
+        ul {
+            position: absolute;
+            left: -300px;
+            transition: .5s;
+
+            li:nth-child(2) {
+                background-color: black;
+                margin-top: 100px;
+            }
+            li {
+                margin-bottom: 10px;
+                margin-left: 20px;
+                background-color: black;
+            }
+            li:nth-child(1) {
+                background-color: transparent;
+            }
         }
 
-        li {
-            list-style-type: none;
-            font-size: 1rem;
+        .opened {
+            left: 0px;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 67px; 
+    
+            li {
+                list-style-type: none;
+                font-size: 1rem;
+            }
+        }
+    }
+
+} 
+
+li {
+    list-style-type: none;
+}
+
+.container_burger {
+    z-index: 100;
+    cursor: pointer;
+    
+    
+    height: 25px;
+    width: 30px;
+
+    @media screen and (max-width: 899px) {
+        position: fixed;
+        left: 20px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: burlywood;
+            top: 0;
+            transform: rotate(0);
+            transition: .5s;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: red;
+            bottom: 0;
+            transform: rotate(0);
+            transition: .5s;
+        }
+    }
+
+    .text_logo {
+        color: transparent;
+        text-indent: -9999px;
+        display: inline-block;
+
+        @media screen and (max-width: 899px) {
+            width: 30px;
+            height: 3px;
+            background-color: chartreuse;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media screen and (min-width: 1130px) {
+            &:after {
+                content: "";
+                background: url("../pictures/logo/android-chrome-192x192.png") no-repeat;
+                background-size: cover;
+                height: 80px;
+                width: 80px;
+                position: absolute;
+                left: 10px;
+                top: 0.2rem;
+            }
         }
     }
 }
 
-li {
+.container_burger.opened {
+    left: 20px;
+}
 
-    .text_logo {
-        display: inline-block;
-        text-indent: -9999px;
+.container_burger.opened .text_logo {
+    background-color: transparent;
+    transition: .5s;
+}
 
-        &:after {
-            content: "";
-            background: url("../pictures/logo/android-chrome-192x192.png") no-repeat;
-            background-size: cover;
-            height: 80px;
-            width: 80px;
-            position: absolute;
-            left: 10px;
-            top: 0.2rem;
-        }
-    }
+.container_burger.opened::before {
+    top: 11px;
+    transform: rotate(45deg);
+}
+.container_burger.opened::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
 }
 
 a {
